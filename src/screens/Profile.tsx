@@ -1,4 +1,10 @@
-import { TouchableOpacity, StyleSheet, TextInput, View, TouchableOpacityProps } from "react-native";
+import {
+  TouchableOpacity,
+  StyleSheet,
+  TextInput,
+  View,
+  TouchableOpacityProps,
+} from "react-native";
 import React from "react";
 import { Column, Image } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
@@ -58,11 +64,11 @@ const Profile = (props: Props) => {
             borderRadius: 16,
           }}
         >
-          {informationNav.map((info) => (
+          {informationNav.map((info, idx) => (
             <TouchableOpacity
               {...info.parentOptions}
               onPress={() => navigation.navigate(info.navigateTo)}
-              key={info.navigateTo}
+              key={`${info.navigateTo}-${idx}`}
             >
               <UserCard {...info.childrenOptions} />
             </TouchableOpacity>

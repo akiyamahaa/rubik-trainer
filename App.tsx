@@ -24,7 +24,8 @@ import { Provider } from "react-redux";
 import store from "./src/store";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
-
+import { LogBox } from "react-native";
+LogBox.ignoreAllLogs();
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
